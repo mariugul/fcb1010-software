@@ -1,12 +1,12 @@
 import QtQuick 2.15
 
 Item {
-    width: 1900
+    width: 1800
     height: image.sourceSize.height * (width / image.sourceSize.width)
     property bool borderLine: true
     Image {
         id: image
-        source: "../../../../Downloads/fcb1010.png"
+        source: "images/fcb1010.png"
         z: 0
         width: parent.width
         height: parent.height

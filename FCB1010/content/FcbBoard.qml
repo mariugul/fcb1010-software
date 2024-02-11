@@ -28,6 +28,7 @@ Item {
 
     // 117 is just the width of the button that matches to the sourcesize of the image
     property real buttonWidth: fcb_button_1.width
+    property real buttonHeight: fcb_button_1.height
     property real aspectRationButtonToImage: 17.09
     property real topRatioBottomButtons: 0.2
     property real topRatioUpperButtons: 0.067
@@ -169,6 +170,28 @@ Item {
         anchors.topMargin: parent.width * topRatioBottomButtons
         z: 1
         width: parent.width / aspectRationButtonToImage
+        debugBorderLine: borderLine
+    }
+
+    // Calculated ratios so the pedal scales well
+    property real pedalBottomMargin: -buttonHeight * 0.06
+    property real pedalWidthRatio: 8.5
+    FcbPedal {
+        id: fcb_pedal_1
+        anchors.bottom: fcb_button_down.bottom
+        anchors.bottomMargin: pedalBottomMargin
+        anchors.left: fcb_button_down.right
+        anchors.leftMargin: offsetBetweenButtons * 1.1
+        width: parent.width / pedalWidthRatio
+        debugBorderLine: borderLine
+    }
+
+    FcbPedal {
+        id: fcb_pedal_2
+        anchors.bottom: fcb_pedal_1.bottom
+        anchors.left: fcb_pedal_1.right
+        anchors.leftMargin: offsetBetweenButtons * 0.75
+        width: parent.width / pedalWidthRatio
         debugBorderLine: borderLine
     }
 

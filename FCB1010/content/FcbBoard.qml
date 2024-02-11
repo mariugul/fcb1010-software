@@ -4,7 +4,6 @@ Item {
     width: 1900
     height: image.sourceSize.height * (width / image.sourceSize.width)
     property bool borderLine: true
-
     // Debug border
     Rectangle {
             width: parent.width
@@ -14,6 +13,15 @@ Item {
             border.width: 2
             visible: borderLine
         }
+
+    FcbScreen {
+        id: fcbScreen
+        x: 1144
+        y: 40
+        width: 100
+        z: 2
+        numberText: "00"
+    }
 
     Image {
         id: image
@@ -184,6 +192,10 @@ Item {
         anchors.leftMargin: offsetBetweenButtons * 1.1
         width: parent.width / pedalWidthRatio
         debugBorderLine: borderLine
+
+        onMidiValueChanged: {
+            fcbScreen.numberText = fcb_pedal_1.midiValue;
+        }
     }
 
     FcbPedal {
@@ -193,6 +205,10 @@ Item {
         anchors.leftMargin: offsetBetweenButtons * 0.75
         width: parent.width / pedalWidthRatio
         debugBorderLine: borderLine
+
+        onMidiValueChanged: {
+            fcbScreen.numberText = fcb_pedal_2.midiValue;
+        }
     }
 
 }

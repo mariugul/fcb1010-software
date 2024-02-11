@@ -2,6 +2,7 @@ import QtQuick 2.15
 import QtQuick.Controls 6.5
 
 Item {
+    readonly property alias midiValue: footPedalSlider.value
     property bool debugBorderLine: true
 
     // Width / height for the proportions of a pedal

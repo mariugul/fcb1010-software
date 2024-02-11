@@ -149,5 +149,27 @@ Item {
         debugBorderLine: borderLine
     }
 
+    // Control Buttons
+    FcbButton {
+        id: fcb_button_up
+        anchors.left: parent.left
+        anchors.top: parent.top
+        anchors.leftMargin: fcb_button_10.anchors.leftMargin + buttonWidth + offsetBetweenButtons
+        anchors.topMargin: parent.width * topRatioUpperButtons
+        z: 1
+        width: parent.width / aspectRationButtonToImage
+        debugBorderLine: borderLine
+    }
+
+    FcbButton {
+        id: fcb_button_down
+        anchors.left: parent.left
+        anchors.top: parent.top
+        anchors.leftMargin: fcb_button_10.anchors.leftMargin + buttonWidth + offsetBetweenButtons
+        anchors.topMargin: parent.width * topRatioBottomButtons
+        z: 1
+        width: parent.width / aspectRationButtonToImage
+        debugBorderLine: borderLine
+    }
 
 }

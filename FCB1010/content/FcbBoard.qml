@@ -11,7 +11,8 @@ Item {
             height: parent.height
             color: "transparent"
             border.color: "red"
-            border.width: borderLine ? 2 : 0
+            border.width: 2
+            visible: borderLine
         }
 
     Image {

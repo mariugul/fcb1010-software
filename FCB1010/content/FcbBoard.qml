@@ -1,9 +1,19 @@
 import QtQuick 2.15
 
 Item {
-    width: 1800
+    width: 1900
     height: image.sourceSize.height * (width / image.sourceSize.width)
     property bool borderLine: true
+
+    // Debug border
+    Rectangle {
+            width: parent.width
+            height: parent.height
+            color: "transparent"
+            border.color: "red"
+            border.width: borderLine ? 2 : 0
+        }
+
     Image {
         id: image
         source: "images/fcb1010.png"

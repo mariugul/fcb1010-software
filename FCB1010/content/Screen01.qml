@@ -30,6 +30,12 @@ Rectangle {
         anchors.centerIn: parent
         font.family: Constants.font.family
     }
+
     FcbBoard {
+        width: slider.value
+        anchors.centerIn: parent
+        borderLine: true
+    }
+
     }
 }

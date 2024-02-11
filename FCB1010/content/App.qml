@@ -6,13 +6,18 @@ import FCB1010
 
 Window {
     width: mainScreen.width
-    height: mainScreen.height
+    height: mainScreen.height * 16 / 9
 
     visible: true
-    title: "FCB1010"
+    maximumHeight: width * 9 / 16
+    minimumHeight: width * 9 / 16
+    minimumWidth: 800
+
+    title: "FCB1010 Software"
 
     Screen01 {
         id: mainScreen
+
     }
 
 }

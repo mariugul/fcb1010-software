@@ -12,8 +12,8 @@ import FCB1010
 
 Rectangle {
     id: rectangle
-    width: Constants.width
-    height: Constants.height
+    width: parent.width
+    height: width * 9 / 16
     opacity: 1
     color: Constants.backgroundColor
 
@@ -32,10 +32,9 @@ Rectangle {
     }
 
     FcbBoard {
-        width: slider.value
+        width: parent.width * 0.7
         anchors.centerIn: parent
-        borderLine: true
+        borderLine: false
     }
 
-    }
 }
